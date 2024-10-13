@@ -12,6 +12,9 @@ log.setLevel(logging.DEBUG)
 # Modbus Client Setup
 client = ModbusSerialClient(framer='rtu', port='/dev/ttyUSB0', baudrate=9600, timeout=1)
 
+# For å koble til klienten når vi har en:)
+# client.connect()
+
 # Mock Read and Write Methods
 with patch.object(client, 'read_holding_registers') as mock_read, \
      patch.object(client, 'write_register') as mock_write:
